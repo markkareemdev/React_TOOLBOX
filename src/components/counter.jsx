@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    value: this.props.value,
+    value: this.props.counter.value,
   };
 
   render() {
@@ -15,13 +15,19 @@ class Counter extends Component {
         >
           increment
         </button>
+        <button
+          onClick={() => this.props.onDelete(this.props.counter.id)}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
+        </button>
       </div>
     );
   }
 
   handleIncrement = () => {
     this.setState({ value: this.state.value + 1 });
-    console.log("Increment clicked"); // note this event handlers refrenced was just added to button property it wass not called as a function.
+    console.log("Increment clicked");
   };
 
   getBadgeClasses() {

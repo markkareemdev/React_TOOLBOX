@@ -12,15 +12,6 @@ class App extends Component {
     ],
   };
 
-  constructor() {
-    super();
-    console.log("App-constructor");
-  }
-
-  componentDidMount() {
-    console.log("app-mounted");
-  }
-
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
@@ -53,7 +44,6 @@ class App extends Component {
   handleCounters = () => {
     return this.state.counters.filter((c) => c.value > 0).length;
   };
-  //   totalCounters={this.state.counters.filter((c) => c.value > 0).length}
 
   render() {
     return (
